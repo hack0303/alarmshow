@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.creating.www.daos.users">
+<resultMap type="userDetail" id="user_detail">
+<id property="account" column="account"/>
+<result property="nickname" column="nickname"/>
+</resultMap>
+<resultMap type="userBean" id="user">
+<id property="uid" column="uid"/>
+<result property="password" column="password"/>
+<result property="lastLoginTime" column="last_logintime"/>
+<association property="userDetail" column="account" javaType="userDetail" resultMap="user_detail"/>
+</resultMap>
+<select id="select#user#uid+" parameterType="string" resultType="userBean" resultMap="user">
+select *
+from user 
+where id = #{id}
+</select>
+<select id="select#user$detail#account+" parameterType="string" resultType="userBean" resultMap="user">
+select *
+from user_detail
+where account = #{account}
+</select>
+<select id="select#user$full#account+" parameterType="string" resultMap="user">
+select *
+from user a
+left outer join user_detail b on a.account = b.account
+where a.account = #{account}
+</select>
+
+
+</mapper>

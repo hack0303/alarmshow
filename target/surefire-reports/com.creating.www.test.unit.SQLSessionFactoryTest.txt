@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.creating.www.test.unit.SQLSessionFactoryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 1.038 sec

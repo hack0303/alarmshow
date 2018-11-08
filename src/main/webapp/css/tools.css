@@ -1,0 +1,12 @@
+.title{
+background:none!important;
+}
+.title:hover{
+background:none!important;
+}
+.pointer{
+	cursor:pointer;
+}
+.test{
+	color:red;
+}
