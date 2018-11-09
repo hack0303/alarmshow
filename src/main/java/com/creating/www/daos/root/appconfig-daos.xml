@@ -2,5 +2,21 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.apache.ibatis.submitted.rounding.Mapper">
+<mapper namespace="com.creating.www.daos.root">
+<resultMap type="configParamBean" id="_config_param">
+<id property="id" column="id"/>
+<result property="key" column="key"/>
+<result property="value" column="value"/>
+<result property="description" column="description"/>
+<result property="directionForUse" column="direction_for_use"/>
+</resultMap>
+<select id="select#config$param#id+" parameterType="int" resultMap="_config_param">
+select *
+from config
+where id = #{id}
+</select>
+<select id="select#config$param#NULL*" resultMap="_config_param">
+select *
+from config
+</select>
 </mapper>

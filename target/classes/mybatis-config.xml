@@ -46,5 +46,8 @@
 	<mappers>
 	<mapper resource="com/creating/www/daos/users/user-daos.xml"/>
 	<mapper resource="com/creating/www/daos/alarms/alarm-daos.xml"/>
+	<mapper resource="com/creating/www/daos/rules/rule-daos.xml"/>
+	<mapper resource="com/creating/www/daos/elecs/elec-daos.xml"/>
+	<mapper resource="com/creating/www/daos/root/appconfig-daos.xml"/>
 	</mappers>
 </configuration>

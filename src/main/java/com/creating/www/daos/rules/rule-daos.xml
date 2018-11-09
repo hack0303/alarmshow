@@ -2,5 +2,21 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.apache.ibatis.submitted.rounding.Mapper">
+<mapper namespace="com.creating.www.daos.rules">
+<resultMap type="ruleBean" id="rule_result">
+<id property="ruleID" column="id"/>
+<result property="srcCode" column="_src_code"/>
+<result property="dscCode" column="_dsc_code"/>
+<result property="srcLayerLevel" column="_src_layer_level"/>
+<result property="dscLayerLevel" column="_dsc_layer_level"/>
+</resultMap>
+<select id="query#rule#ruleid+" resultType="ruleBean" parameterType="int" resultMap="rule_result">
+select *
+from rule
+where id = #{id}
+</select>
+<select id="query#rule#NULL*" resultType="ruleBean" resultMap="rule_result">
+select *
+from rule
+</select>
 </mapper>

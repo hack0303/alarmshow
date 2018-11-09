@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.creating.www.utils.ElecUtil;
+
 /**
  * 电路Bean
  * 
@@ -14,7 +16,7 @@ public class ElecBean implements Cloneable {
 	public int bussid;// 电路号
 	public int type = WORK;// 电路类型 WORK,PROTECT
 	public static final int WORK = 1;// 工作电路类型
-	public static final int PROTECT = 1 << 1;// 保护电路类型
+	public static final int PROTECT = 2;// 保护电路类型
 	public String layerType;// 电路层级类型
 	public Set<Integer> servers;// 服务层电路集合
 	public Set<Integer> clients;// 客户层电路集合
@@ -35,6 +37,70 @@ public class ElecBean implements Cloneable {
 
 	public ElecBean(int id) {
 		this.bussid = id;
+	}
+
+	public int getBussid() {
+		return bussid;
+	}
+
+	public void setBussid(int bussid) {
+		this.bussid = bussid;
+	}
+
+	public String getType() {
+		return ElecUtil.reverseElecType(this.type);
+	}
+
+	public void setType(String type) {
+	this.type=ElecUtil.reverseElecType(type);
+	}
+
+	public String getLayerType() {
+		return layerType;
+	}
+
+	public void setLayerType(String layerType) {
+		this.layerType = layerType;
+	}
+
+	public String getServers() {
+		return ElecUtil.transformLayerBussids(servers);
+	}
+
+	public void setServers(String servers) {
+		this.servers =ElecUtil.transformLayerBussids(servers);
+	}
+
+	public String getClients() {
+		return ElecUtil.transformLayerBussids(clients);
+	}
+
+	public void setClients(String clients) {
+		this.clients = ElecUtil.transformLayerBussids(clients);
+	}
+
+	public String getForwardPath() {
+		return ElecUtil.transformRouterPath(forwardPath);
+	}
+
+	public void setForwardPath(String forwardPath) {
+		this.forwardPath = ElecUtil.transformRouterPath(forwardPath);
+	}
+
+	public String getReversePath() {
+		return ElecUtil.transformRouterPath(reversePath);
+	}
+
+	public void setReversePath(String reversePath) {
+		this.reversePath = ElecUtil.transformRouterPath(reversePath);
+	}
+
+	public Set<Integer> getAncenstors() {
+		return ancenstors;
+	}
+
+	public void setAncenstors(Set<Integer> ancenstors) {
+		this.ancenstors = ancenstors;
 	}
 
 	/**

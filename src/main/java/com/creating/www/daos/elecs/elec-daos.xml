@@ -2,5 +2,24 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.apache.ibatis.submitted.rounding.Mapper">
+<mapper namespace="com.creating.www.daos.elecs">
+<resultMap type="elecBean" id="elec_result">
+<id property="bussid" column="id"/>
+<result property="type" column="bussitype"/>
+<result property="layerType" column="layertype"/>
+<result property="servers" column="serverids"/>
+<result property="clients" column="clientids"/>
+<result property="forwardPath" column="forwardrouterpath"/>
+<result property="reversePath" column="reverserouterpath"/>
+</resultMap>
+<select id="select#elec#elecid+" parameterType="int" resultType="elecBean" resultMap="elec_result">
+select *
+from elec
+where id = #{id}
+</select>
+<select id="select#elec#NULL*" resultType="elecBean" resultMap="elec_result">
+select *
+from elec
+</select>
+
 </mapper>

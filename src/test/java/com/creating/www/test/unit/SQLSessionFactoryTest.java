@@ -18,10 +18,16 @@ import org.junit.Test;
 
 import com.creating.www.beans.UserBean;
 import com.creating.www.beans.alarms.AlarmBean;
+import com.creating.www.beans.routers.ElecBean;
+import com.creating.www.beans.routers.RouterNode;
+import com.creating.www.beans.rules.RuleBean;
 import com.creating.www.context.CustomerAppContext;
 import com.creating.www.daos.users.QueryStatement;
 import com.creating.www.services.alarmsrela.AlarmRelaService;
+import com.creating.www.services.elecsrela.ElecRelaService;
 import com.creating.www.services.login.LoginService;
+import com.creating.www.services.rulesrela.RuleRelaService;
+import com.creating.www.utils.ElecUtil;
 
 public class SQLSessionFactoryTest {
 
@@ -103,8 +109,9 @@ public class SQLSessionFactoryTest {
 	    assertNotNull("没有查询到此对象",user);
 	    assertEquals("不符合预期","root", user.getUserDetail().getAccount());
 	}
+	@Ignore
 	@Test
-	public void test003() 
+	public void testAlarms() 
 	{
 		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
 	    List<AlarmBean> list=new AlarmRelaService().queryAllAlarms();
@@ -113,6 +120,37 @@ public class SQLSessionFactoryTest {
 	    {
 	    	System.out.println(aBean);
 	    }
+	}
+	@Ignore
+	@Test
+	public void testRules() 
+	{
+		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
+	    List<RuleBean> list=new RuleRelaService().queryAllRules();
+	    assertNotNull(list);
+	    for(RuleBean aBean:list) 
+	    {
+	    	System.out.println(aBean);
+	    }
+	}
+	@Test
+	public void testElecs() 
+	{
+		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
+	    List<ElecBean> list=new ElecRelaService().queryAllElecs();
+	    assertNotNull(list);
+	    for(ElecBean aBean:list) 
+	    {
+	    	System.out.println(aBean);
+	    }
+	}
+	@Ignore
+	@Test
+	public void testFunc() 
+	{
+		List<RouterNode> list=ElecUtil.transformRouterPath("NEId:13172739--BoardId:19726417--PortName:PTP-PO=1/OCH=1--------->NEId:13172748--BoardId:19726661--PortName:PTP-PO=1/OCH=1--------->NEId:13172748--BoardId:19726661--PortName:PTP-PO=49/OTS=1/OMS=1/OCH=1--------->NEId:13172748--BoardId:19726664--PortName:PTP-PO=2/OTS=1/OMS=1/OCH=1--------->NEId:13172748--BoardId:19726664--PortName:PTP-PO=3/OTS=1/OMS=1/OCH=49--------->NEId:13172750--BoardId:19726717--PortName:PTP-PO=3/OTS=1/OMS=1/OCH=49--------->NEId:13172750--BoardId:19726717--PortName:PTP-PO=2/OTS=1/OMS=1/OCH=1--------->NEId:13172750--BoardId:19726733--PortName:PTP-PO=49/OTS=1/OMS=1/OCH=1--------->NEId:13172750--BoardId:19726733--PortName:PTP-PO=1/OCH=1--------->NEId:13172750--BoardId:19726711--PortName:PTP-PO=1/OCH=1--------->");
+	    assertNotNull("返回结果为空",list);
+	    System.out.println(list);
 	}
 
 }

@@ -70,22 +70,28 @@ public class RouterNode implements Order,Comparable<RouterNode>{
 		this.boardId = 0;
 		this.portName ="test";
 	}
-
+	public RouterNode(String... args) {
+		this.NEId =Integer.valueOf(args[0].split(symbol001)[1]);
+		this.boardId = Integer.valueOf(args[1].split(symbol001)[1]);
+		this.portName =args[2].split(symbol001)[1];
+	}
+    public static final String symbol001=":";
+    public static final String symbol002="--";
+    public static final String symbol003="--------->";
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("[");
 		sb.append("NEId");
-		sb.append("=");
+		sb.append(symbol001);
 		sb.append(NEId);
-		sb.append("--");
+		sb.append(symbol002);
 		sb.append("BoardId");
-		sb.append("=");
+		sb.append(symbol001);
 		sb.append(boardId);
-		sb.append("--");
+		sb.append(symbol002);
 		sb.append("PortName");
-		sb.append("=");
+		sb.append(symbol001);
 		sb.append(portName);
-		sb.append("]");
+		sb.append(symbol003);
 		return sb.toString();
 	}
 
