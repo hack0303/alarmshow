@@ -11,14 +11,55 @@
 <result property="firstCreateTime" column="firstcreatetime"/>
 <result property="clearTime" column="cleartime"/>
 </resultMap>
+<resultMap type="alarmBean" id="src">
+<id property="almID" column="src_id"/>
+</resultMap>
+<resultMap type="alarmBean" id="dsc">
+<id property="almID" column="dsc_id"/>
+</resultMap>
+<resultMap type="elecBean" id="elec">
+<id property="bussid" column="elecid"/>
+</resultMap>
+<resultMap type="ruleBean" id="rule">
+<id property="ruleID" column="ruleid"/>
+</resultMap>
+<resultMap type="alarmPairBean" id="alarmrela">
+<id property="id" column="id"/>
+<result property="batchid" column="batchid"/>
+<association property="src" column="src_id" javaType="alarmBean" resultMap="src"/>
+<association property="dsc" column="dsc_id" javaType="alarmBean" resultMap="dsc"/>
+<association property="elecBean" column="elecid" javaType="elecBean" resultMap="elec"/>
+<association property="ruleBean" column="ruleid" javaType="ruleBean" resultMap="rule"/>
+
+</resultMap>
 <select id="select#alarm#logid+" parameterType="int" resultType="alarmBean" resultMap="alarm_result">
 select *
 from alarm
 where id = #{id}
 </select>
-<select id="select#alarms#logid" resultType="alarmBean" resultMap="alarm_result">
+<select id="select#alarms#logid*" resultType="alarmBean" resultMap="alarm_result">
 select *
 from alarm
 </select>
-
+<sql id="sql#select#alarmsrela#NULL*">
+select 
+A.id,A.batchid,SRC.id AS src_id,DSC.id As dsc_id,
+ELEC.id AS elecid,
+RULE.id AS ruleid
+from alarm_rela A left join alarm SRC on A.src=SRC.id
+left join alarm DSC on A.dsc=DSC.id
+left join elec ELEC on A.elecid=ELEC.id
+left join rule RULE on A.ruleid=RULE.id
+</sql>
+<select id="select#alarmsrela#id+" resultType="alarmPairBean" resultMap="alarmrela">
+<include refid="sql#select#alarmsrela#NULL*"/>
+where A.id = #{id}
+</select>
+<select id="select#alarmsrela#batchid*" resultType="alarmPairBean" resultMap="alarmrela">
+<include refid="sql#select#alarmsrela#NULL*"/>
+where A.batchid = #{batchid}
+</select>
+<select id="select#alarmsrela#NULL*" resultType="alarmPairBean" resultMap="alarmrela">
+<include refid="sql#select#alarmsrela#NULL*"/>
+</select>
 </mapper>

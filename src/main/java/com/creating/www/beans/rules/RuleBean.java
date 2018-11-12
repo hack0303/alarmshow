@@ -39,5 +39,8 @@ public String getDscLayerLevel() {
 public void setDscLayerLevel(String dscLayerLevel) {
 	this.dscLayerLevel = dscLayerLevel;
 }
-
+@Override
+public int hashCode() {
+	return ruleID;
+}
 }

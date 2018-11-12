@@ -18,6 +18,8 @@ import org.junit.Test;
 
 import com.creating.www.beans.UserBean;
 import com.creating.www.beans.alarms.AlarmBean;
+import com.creating.www.beans.alarms.AlarmPairBean;
+import com.creating.www.beans.results.AnalysisBean;
 import com.creating.www.beans.routers.ElecBean;
 import com.creating.www.beans.routers.RouterNode;
 import com.creating.www.beans.rules.RuleBean;
@@ -26,6 +28,7 @@ import com.creating.www.daos.users.QueryStatement;
 import com.creating.www.services.alarmsrela.AlarmRelaService;
 import com.creating.www.services.elecsrela.ElecRelaService;
 import com.creating.www.services.login.LoginService;
+import com.creating.www.services.results.ResultsService;
 import com.creating.www.services.rulesrela.RuleRelaService;
 import com.creating.www.utils.ElecUtil;
 
@@ -133,6 +136,7 @@ public class SQLSessionFactoryTest {
 	    	System.out.println(aBean);
 	    }
 	}
+	@Ignore
 	@Test
 	public void testElecs() 
 	{
@@ -151,6 +155,29 @@ public class SQLSessionFactoryTest {
 		List<RouterNode> list=ElecUtil.transformRouterPath("NEId:13172739--BoardId:19726417--PortName:PTP-PO=1/OCH=1--------->NEId:13172748--BoardId:19726661--PortName:PTP-PO=1/OCH=1--------->NEId:13172748--BoardId:19726661--PortName:PTP-PO=49/OTS=1/OMS=1/OCH=1--------->NEId:13172748--BoardId:19726664--PortName:PTP-PO=2/OTS=1/OMS=1/OCH=1--------->NEId:13172748--BoardId:19726664--PortName:PTP-PO=3/OTS=1/OMS=1/OCH=49--------->NEId:13172750--BoardId:19726717--PortName:PTP-PO=3/OTS=1/OMS=1/OCH=49--------->NEId:13172750--BoardId:19726717--PortName:PTP-PO=2/OTS=1/OMS=1/OCH=1--------->NEId:13172750--BoardId:19726733--PortName:PTP-PO=49/OTS=1/OMS=1/OCH=1--------->NEId:13172750--BoardId:19726733--PortName:PTP-PO=1/OCH=1--------->NEId:13172750--BoardId:19726711--PortName:PTP-PO=1/OCH=1--------->");
 	    assertNotNull("返回结果为空",list);
 	    System.out.println(list);
+	}
+	@Ignore
+	@Test
+	public void testAlarmRela() 
+	{
+		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
+	    List<AlarmPairBean> list=new AlarmRelaService().queryAllAlarmPair();
+	    assertNotNull(list);
+	    for(AlarmPairBean aBean:list) 
+	    {
+	    	System.out.println(aBean);
+	    }
+	}
+	@Test
+	public void testAnalysisBean() 
+	{
+		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
+	    List<AnalysisBean> list=new ResultsService().queryAllResults();
+	    assertNotNull(list);
+	    for(AnalysisBean aBean:list) 
+	    {
+	    	System.out.println(aBean);
+	    }
 	}
 
 }

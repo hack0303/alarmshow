@@ -12,16 +12,27 @@
 <link rel="stylesheet" href="../../../css/tools.css"><title>Insert title here</title>
 </head>
 <body>
-<h2>告警结果展示</h2>
+<h2>告警实时展示界面</h2>
+<div class="row">
+<div class="col-lg-2">
+数据源选择
+</div>
+<div class="col-lg-2">
+<select name="mode">
+<option  value="file">文件模式</option>
+<option value="database">数据库模式</option>
+</select>
+</div>
+</div>
 	<table class="table table-hover">
 		<tr class="title">
-			<td>勾选</td>
+			<td></td>
 			<td>ID</td>
-		     <td>告警类型</td>
-		     <td>告警层级</td>
-		     <td>告警第一次发生时间</td>
-		     <td>告警是否返回</td>
-		     <td>告警根/衍生判断</td>
+		     <td>相对根/绝对根</td>
+		     <td>衍生</td>
+		     <td>匹配规则</td>
+		     <td>匹配电路</td>
+		     <td>处理批次号</td>
 			<td>详情</td>
 			<td>操作</td>
 		</tr>
@@ -32,11 +43,11 @@
 					</label>
 				</div></td>
 			<td>ID</td>
-		     <td>告警类型</td>
-		     <td>告警层级</td>
-		     <td>告警第一次发生时间</td>
-		     <td>告警是否返回</td>
-		     <td>告警根/衍生判断</td>
+		     <td>相对根/绝对根</td>
+		     <td>衍生</td>
+		     <td>匹配规则</td>
+		     <td>匹配电路</td>
+		     <td>处理批次号</td>
 			<td>详情</td>
 		<td><button type="button" class="btn btn-danger">删除</button>  <button type="button" class="btn btn-warning">更新</button></td>
 		</tr>

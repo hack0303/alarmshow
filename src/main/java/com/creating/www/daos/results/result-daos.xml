@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creating.www.daos.results">
+<resultMap type="alarmBean" id="me">
+<id property="almID" column="meid"/>
+</resultMap>
+<resultMap type="alarmBean" id="header">
+<id property="almID" column="headid"/>
+</resultMap>
+<resultMap type="analysisBean" id="result">
+<id property="id" column="id"/>
+<result property="batchId" column="batchid"/>
+<result property="isReturned" column="_is_returned"/>
+<result property="isGroup" column="_is_group"/>
+<result property="returnType" column="return_type"/>
+<association property="header" javaType="alarmBean" resultMap="header" column="headid"/>
+<association property="almBean" javaType="alarmBean" resultMap="me" column="meid"/>
+</resultMap>
+<sql id="sql#selec#results#NULL*">
+SELECT RESULT.id AS id,RESULT.batchid AS batchid,RESULT._is_returned,RESULT._is_group,RESULT.return_type
+,ME.id AS meid
+,HEAD.id AS headid
+FROM analysis_result RESULT 
+left join alarm ME on RESULT.alarmid=ME.id
+left join alarm HEAD on RESULT.header=HEAD.id 
+</sql>
+<select parameterType="int"  resultMap="result" id="selec#results#KEYID+">
+<include refid="sql#selec#results#NULL*"/>
+WHERE RESULT.id = #{id}
+</select>
+<select id="selec#results#NULL*" resultMap="result">
+<include refid="sql#selec#results#NULL*"/>
+</select>
+</mapper>

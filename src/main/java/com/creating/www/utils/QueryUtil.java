@@ -8,7 +8,7 @@ import com.creating.www.context.CustomerAppContext;
 
 public class QueryUtil<Bean> {
 	@SuppressWarnings("unchecked")
-	public Bean queryByKey(String statement,String key) {
+	public static <Bean> Bean queryByKey(String statement,String key) {
 		SqlSession SESSION = CustomerAppContext._SQL_SESSION_FACTORY.openSession();
 		Bean userBean = null;
 		try {
@@ -22,7 +22,7 @@ public class QueryUtil<Bean> {
 		return userBean;
 	}
 	@SuppressWarnings("unchecked")
-	public List<Bean> query(String statement) {
+	public static <Bean> List<Bean> query(String statement) {
 		SqlSession SESSION = CustomerAppContext._SQL_SESSION_FACTORY.openSession();
 		List<Bean> beans = null;
 		try {

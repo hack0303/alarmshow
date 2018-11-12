@@ -17,6 +17,10 @@
 </div>
 <div id="alarms_show" class="row">
 	<div id="_opt_title" class="border col"><h1>告警展示</h1></div>
+	<div id="_opt_nav" class="border col"><h2>相对关系</h2></div>
+	<div id="_opt_nav" class="border col"><h2>告警组</h2></div>
+	<div id="_opt_nav" class="border col"><h2>告警结果</h2></div>
+	
 </div>
 <div id="root" class="row">
 	<div id="_opt_title" class="border col"><h1>后台相关</h1></div>

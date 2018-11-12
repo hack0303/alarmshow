@@ -10,8 +10,8 @@ public class LoginService {
 	}
 	public UserBean check(String statement, String key) {
 		UserBean result=null;
-		if(statement.contains("#account")) result=new QueryUtil<UserBean>().queryByKey(statement, key);
-		else if(statement.contains("#uid")) result=new QueryUtil<UserBean>().queryByKey(statement, key);
+		if(statement.contains("#account")) result=QueryUtil.queryByKey(statement, key);
+		else if(statement.contains("#uid")) result=QueryUtil.queryByKey(statement, key);
 		return result;
 	}
 }

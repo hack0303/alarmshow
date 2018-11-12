@@ -11,7 +11,7 @@ public class RuleRelaService {
 
 	public List<RuleBean> queryAllRules()
 	{
-		List<RuleBean> alls=new QueryUtil<RuleBean>().query(com.creating.www.daos.rules.QueryStatement.Q002);
+		List<RuleBean> alls=QueryUtil.query(com.creating.www.daos.rules.QueryStatement.Q002);
 	    return alls;
 	}
 	
