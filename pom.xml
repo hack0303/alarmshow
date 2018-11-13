@@ -111,6 +111,9 @@
 						<configuration>
 							<source>${java.version}</source>
 							<target>${java.version}</target>
+							<includes>
+							<include>*.xml</include>
+							</includes>
 						</configuration>
 					</execution>
 					<execution>

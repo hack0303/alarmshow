@@ -24,12 +24,25 @@
 		<tr class="title">
 			<td></td>
 			<td>ID</td>
-			<td>绝对根ID</td>
-			<td>成员ID</td>
+			<td>组号(默认使用根ID)</td>
+			<td>成员</td>
 			<td>详情</td>
 			<td>操作</td>
 		</tr>
-	
+		<c:forEach var="agroup" items="${results}">
+	<tr>
+			<td><div class="checkbox">
+					<label> <input type="checkbox" id="blankCheckbox"
+						value="option1" aria-label="...">
+					</label>
+				</div></td>
+			<td>${agroup.id}</td>
+			<td>${agroup.groupHeader.almID}</td>
+			<td>${agroup.memberids}</td>
+			<td>详情</td>
+			<td>操作</td>
+		</tr>
+	</c:forEach>
 
 	</table>
 	<span><%@include file="/WEB-INF/jsp/page/pagebar.jsp"%></span>

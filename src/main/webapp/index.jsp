@@ -3,30 +3,78 @@
 <%@page import="com.creating.www.beans.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%
-Object attr=request.getSession().getAttribute("user");
-if(attr==null) response.sendRedirect("/app/login");
-//else System.out.println(((UserBean)(attr)).getLastLoginTime());
-%>
+
 <!DOCTYPE html>
 <html lang="zh-CN" style="height:100%;">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/tools.css">
-<title>DEMO主页</title>
+<link rel="stylesheet" href="css/flat-ui.min.css">
+<style>
+.header__nav {
+    margin-top: 25px;
+    text-align: right;
+}
+.button.white:not(:hover) {
+	color: #11bba6 !important;
+	background-color: #fafafa !important;
+}
+.button.transparent:not(:hover) {
+	color: #fff;
+	background-color: rgba(250, 250, 250, 0.2) !important;
+}
+.button.small {
+	font-size: 14px;
+	font-weight: 600;
+	padding: 0.8em 1.8em;
+	border-radius: 30px;
+}
+.button {
+	display: inline-block;
+	text-decoration: none !important;
+	transition: 0.4s;
+}
+.header__nav .button:last-child {
+	margin-left: 16px;
+}
+.header .logo {
+	position: absolute;
+	z-index: 2;
+	left: 15px;
+	top: 35px;
+}
+</style>
+<title>网站主页</title>
 </head>
-<body style="height:100%;">
-<div class="container-fluid" style="border:1px solid red;height:100%;overflow-y:scroll;overflow-x:hidden;">
-<div class="row border"><%@include file="/WEB-INF/jsp/areas/head.jsp" %></div>
-<div class="row border" style="height:100%;overflow:hidden;">
-<div id="left" class="col-lg-2 text-center border" style="height:100%;"><%@include file="/WEB-INF/jsp/areas/left.jsp" %></div>
-<div id="right" class="col-lg-10 border" id="nav_area" style="height:100%;overflow-y:scroll;"><%@include file="/WEB-INF/jsp/areas/right.jsp" %></div>
+<body style="height:100%;background:#00b185;">
+<div class="container">
+<div id="top" class="row border" style="height:100%;">
+<div id="row">
+<div class="col-md-6">
+<a href="https://sendpulse.com/" class="logo" target="_blank">
+<img src="./images" alt="国响" width="126" height="16">
+</a></div>
+<div class="col-md-6 header__nav"><a class="button small transparent" href="https://login.sendpulse.com/" target="_blank">登&nbsp;录</a><a class="button small white" href="#" data-toggle="modal" data-target="#signup">注&nbsp;册</a></div>
+</div>
+<div id="banner" class="row border">
+<div id="enterpoint" class="row border"></div>
+</div>
+</div>
+<div id="nav" class="row border">
+<div class="col-lg-3">
+<p>告警规则的选择</p>
+<p>电路规则的选择</p>
+<p>实时告警的选择</p>
+</div>
+<div class="col-lg-9">
+<p>实时视图的展示</p>
+</div>
+</div>
+<div id="question" class="row border">
+问题
 </div>
 <div id="footer" class="row border">
 <div class="col-lg-4 col-lg-offset-8 border">
@@ -42,6 +90,10 @@ if(attr==null) response.sendRedirect("/app/login");
 </div>
 </div>
 </div>
-<script src="/js/index/left.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/flat-ui.min.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@ public class QueryStatement {
 	 * selec#results#NULL*
 	 */
 	public static final String Q002 = "selec#results#NULL*";
-
+	/**
+	 *sql#select#results$group#NULL*
+	 */
+	public static final String Q003 = "sql#select#results$group#NULL*";
 
 }

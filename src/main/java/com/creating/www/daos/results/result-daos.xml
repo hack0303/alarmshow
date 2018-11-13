@@ -17,6 +17,15 @@
 <association property="header" javaType="alarmBean" resultMap="header" column="headid"/>
 <association property="almBean" javaType="alarmBean" resultMap="me" column="meid"/>
 </resultMap>
+<resultMap type="alarmBean" id="groupHeader">
+<id property="almID" column="grouphead"/>
+</resultMap>
+<resultMap type="groupBean" id="group">
+<id property="id" column="id"/>
+<result property="batchid" column="batchid"/>
+<result property="memberids" column="memberids"/>
+<association property="groupHeader" column="grouphead" javaType="alarmBean" resultMap="groupHeader"/>
+</resultMap>
 <sql id="sql#selec#results#NULL*">
 SELECT RESULT.id AS id,RESULT.batchid AS batchid,RESULT._is_returned,RESULT._is_group,RESULT.return_type
 ,ME.id AS meid
@@ -25,11 +34,19 @@ FROM analysis_result RESULT
 left join alarm ME on RESULT.alarmid=ME.id
 left join alarm HEAD on RESULT.header=HEAD.id 
 </sql>
+<sql id="sql#select#results$group#NULL*">
+SELECT G.id as id,G.batchid as batchid,G.memberids as memberids,G._group_header as grouphead
+FROM `group` G
+left join alarm GROUPHEAD on G._group_header = GROUPHEAD.id
+</sql>
 <select parameterType="int"  resultMap="result" id="selec#results#KEYID+">
 <include refid="sql#selec#results#NULL*"/>
 WHERE RESULT.id = #{id}
 </select>
 <select id="selec#results#NULL*" resultMap="result">
 <include refid="sql#selec#results#NULL*"/>
+</select>
+<select id="sql#select#results$group#NULL*" resultType="groupBean" resultMap="group">
+<include refid="sql#select#results$group#NULL*"/>
 </select>
 </mapper>

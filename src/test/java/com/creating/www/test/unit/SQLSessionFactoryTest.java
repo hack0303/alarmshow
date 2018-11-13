@@ -20,6 +20,7 @@ import com.creating.www.beans.UserBean;
 import com.creating.www.beans.alarms.AlarmBean;
 import com.creating.www.beans.alarms.AlarmPairBean;
 import com.creating.www.beans.results.AnalysisBean;
+import com.creating.www.beans.results.GroupBean;
 import com.creating.www.beans.routers.ElecBean;
 import com.creating.www.beans.routers.RouterNode;
 import com.creating.www.beans.rules.RuleBean;
@@ -168,6 +169,7 @@ public class SQLSessionFactoryTest {
 	    	System.out.println(aBean);
 	    }
 	}
+	@Ignore
 	@Test
 	public void testAnalysisBean() 
 	{
@@ -179,5 +181,15 @@ public class SQLSessionFactoryTest {
 	    	System.out.println(aBean);
 	    }
 	}
-
+	@Test
+	public void testGroupBean() 
+	{
+		assertNotNull("会话工厂为空",CustomerAppContext._SQL_SESSION_FACTORY);
+	    List<GroupBean> list=new ResultsService().queryAllGroups();
+	    assertNotNull(list);
+	    for(GroupBean aBean:list) 
+	    {
+	    	System.out.println(aBean);
+	    }
+	}
 }

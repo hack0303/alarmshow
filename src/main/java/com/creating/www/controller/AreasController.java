@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.creating.www.beans.alarms.AlarmBean;
 import com.creating.www.beans.alarms.AlarmPairBean;
 import com.creating.www.beans.results.AnalysisBean;
+import com.creating.www.beans.results.GroupBean;
 import com.creating.www.beans.root.ConfigParamBean;
 import com.creating.www.beans.routers.ElecBean;
 import com.creating.www.beans.rules.RuleBean;
@@ -54,7 +55,7 @@ public class AreasController {
 				//System.out.println("--------------"+results.size());
 				_mv.addObject("results", results);
 			} else if (pathname002.equals("groups")) {
-				List<AnalysisBean> results = resultsServ.queryAllResults();
+				List<GroupBean> results = resultsServ.queryAllGroups();
 				_mv.addObject("results", results);
 			} else if (pathname002.equals("final")) {
 				List<AnalysisBean> results = resultsServ.queryAllResults();

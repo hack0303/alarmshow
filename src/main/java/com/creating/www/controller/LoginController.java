@@ -33,7 +33,7 @@ public class LoginController {
 			if(afterCheck==null) return new ModelAndView("redirect:/app/login");
 		    hs.setAttribute("user",afterCheck);	
 		}
-		return new ModelAndView("forward:/index.jsp");
+		return new ModelAndView("forward:/backstage.jsp");
 	}
 	@RequestMapping("/out")
 	public ModelAndView loginout(HttpServletRequest request,Model model) 
