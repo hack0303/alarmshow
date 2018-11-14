@@ -19,7 +19,6 @@
 <title>相对关系展示</title>
 </head>
 <body>
-	<h2>相对关系展示</h2>
 	<table class="table table-hover">
 		<tr class="title">
 			<td></td>

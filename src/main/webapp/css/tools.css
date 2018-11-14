@@ -10,3 +10,17 @@ background:none!important;
 .test{
 	color:red;
 }
+.one{
+	height:2em;
+	font-size:18px;
+}
+.two{
+	height:1.5em;
+}
+.three{
+	
+	height:1em;
+}
+.golbal-background-color{
+	background:#00b185;
+}

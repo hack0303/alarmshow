@@ -12,7 +12,7 @@
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/tools.css">
-<link rel="stylesheet" href="css/flat-ui.min.css">
+<link rel="stylesheet" href="/css/flat-ui.min.css">
 <style>
 .header__nav {
     margin-top: 25px;
@@ -49,7 +49,7 @@
 </style>
 <title>网站主页</title>
 </head>
-<body style="height:100%;background:#00b185;">
+<body class="golbal-background-color" style="height:100%;">
 <div class="container">
 <div id="top" class="row border" style="height:100%;">
 <div id="row">
@@ -57,20 +57,32 @@
 <a href="https://sendpulse.com/" class="logo" target="_blank">
 <img src="./images" alt="国响" width="126" height="16">
 </a></div>
-<div class="col-md-6 header__nav"><a class="button small transparent" href="https://login.sendpulse.com/" target="_blank">登&nbsp;录</a><a class="button small white" href="#" data-toggle="modal" data-target="#signup">注&nbsp;册</a></div>
+<div class="col-md-6 header__nav"><a class="button small transparent" href="/app/login" target="_self">登&nbsp;录</a><a class="button small white" href="/app/register" data-toggle="modal" data-target="#signup">注&nbsp;册</a></div>
 </div>
 <div id="banner" class="row border">
 <div id="enterpoint" class="row border"></div>
 </div>
 </div>
 <div id="nav" class="row border">
-<div class="col-lg-3">
-<p>告警规则的选择</p>
-<p>电路规则的选择</p>
-<p>实时告警的选择</p>
-</div>
-<div class="col-lg-9">
-<p>实时视图的展示</p>
+          <div class="share mrl col-md-4" style="margin-left:0px;" >
+            <ul>
+              <li>
+                <label class="share-label" for="share-toggle2">告警规则</label>
+                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"><div class="bootstrap-switch-container"><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" data-toggle="switch"></div></div>
+              </li>
+              <li>
+                <label class="share-label" for="share-toggle4">电路规则</label>
+                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on"><div class="bootstrap-switch-container" style=""><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" checked="" data-toggle="switch"></div></div>
+              </li>
+              <li>
+                <label class="share-label" for="share-toggle6">实时告警</label>
+                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"><div class="bootstrap-switch-container"><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" data-toggle="switch"></div></div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-block btn-large">开始</a>
+          </div> <!-- /share -->
+<div class="col-md-8" style="height:200px;">
+he
 </div>
 </div>
 <div id="question" class="row border">
@@ -93,7 +105,9 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="js/flat-ui.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="/js/flat-ui.min.js"></script>
 <script src="/js/index.js"></script>
+
 </body>
 </html>

@@ -7,14 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>参数配置</title>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../../../css/tools.css">
+<link rel="stylesheet" href="/css/tools.css">
+<link rel="stylesheet" href="/css/flat-ui.min.css">
 </head>
 <body>
-<h2>配置参数</h2>
 <table class="table table-hover">
 <tr class="title">
 			<td>勾选</td>
@@ -43,5 +41,10 @@
 </tr>
 </c:forEach>
 </table>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="/js/flat-ui.min.js"></script>
 </body>
 </html>

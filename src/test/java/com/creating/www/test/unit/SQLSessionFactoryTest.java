@@ -181,6 +181,7 @@ public class SQLSessionFactoryTest {
 	    	System.out.println(aBean);
 	    }
 	}
+
 	@Test
 	public void testGroupBean() 
 	{

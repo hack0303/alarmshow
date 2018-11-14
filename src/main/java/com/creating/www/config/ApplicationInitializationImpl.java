@@ -3,6 +3,7 @@ package com.creating.www.config;
 import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
@@ -13,9 +14,10 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class ApplicationInitializationImpl implements WebApplicationInitializer {
-
+    public static String basePath="";
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
+		basePath=servletContext.getRealPath("/");
 		// TODO Auto-generated method stub
 		XmlWebApplicationContext xmlAC = new XmlWebApplicationContext();
 		xmlAC.setConfigLocation("/WEB-INF/app-context.xml");
@@ -31,6 +33,10 @@ public class ApplicationInitializationImpl implements WebApplicationInitializer 
 		filter_register.addMappingForUrlPatterns(dispatcherTypes,true,"/*");
 		ServletRegistration.Dynamic registration = servletContext.addServlet("dispatcher",
 				new DispatcherServlet(xmlAC));
+		     long maxUploadSize=104857600;
+		     int maxInMemorySize=4096;
+		MultipartConfigElement element=new MultipartConfigElement(null,maxUploadSize,maxUploadSize,maxInMemorySize);
+		registration.setMultipartConfig(element);
 		registration.setLoadOnStartup(1);
 		registration.addMapping("/app/*");
 		
