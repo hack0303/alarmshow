@@ -14,8 +14,14 @@ public class IndexController {
 	@GetMapping("")
 	public ModelAndView execute(Model model) 
 	{	
-		return new ModelAndView("redirect:/index.jsp");
+		return new ModelAndView("redirect:index");
 	}
+	@GetMapping("index")
+	public ModelAndView execute() 
+	{	
+		return new ModelAndView("index");
+	}
+	
 	@ResponseBody
 	@ExceptionHandler({Exception.class})
 	public String handleException(Exception e) 
