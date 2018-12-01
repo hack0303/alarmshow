@@ -21,8 +21,6 @@
 			<td>参数值</td>
 			<td>描述</td>
 			<td>使用说明</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
 		<c:forEach var="_config_param" items="${configParams}" >
 		<tr>
@@ -36,8 +34,6 @@
 			<td>${_config_param.value}</td>
 			<td>${_config_param.description}</td>
 			<td>${_config_param.directionForUse}</td>
-			<td>详情</td>
-		    <td><button type="button" class="btn btn-danger">删除</button>  <button type="button" class="btn btn-warning">更新</button></td>	
 </tr>
 </c:forEach>
 </table>

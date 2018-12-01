@@ -16,6 +16,34 @@
 <title>告警条目表</title>
 </head>
 <body>
+<div class="container">
+<div class="row">
+<div class="col-md-2 col-md-offset-6">
+刷新
+</div>
+<div class="col-md-4">
+创建告警
+</div>
+</div>
+<div class="row">
+<div class="col-md-1">分项001</div>
+<div class="col-md-1">分项002</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+选择类型
+</div>
+<div class="col-md-2">
+<input type="text">
+</div>
+<div class="col-md-2">
+<input type="button" value="search">
+</div>
+</div>
+<div class="row">
+
 	<table class="table table-hover">
 		<tr class="title">
 			<td></td>
@@ -26,7 +54,6 @@
 			<td>告警码</td>
 			<td>告警第一次发生时间</td>
 			<td>告警清除时间</td>
-			<td>详情</td>
 			<td>操作</td>
 		</tr>
 		<c:forEach var="alarm" items="${alarms}">
@@ -41,12 +68,13 @@
 			<td><c:out value="${alarm.alarmCode}"/></td>
 			<td><c:out value="${alarm.firstCreateTime}"/></td>
 			<td><c:out value="${alarm.clearTime}"/></td>
-			<td><a href="<c:out value='${alarm.almID}'/>">详情</a></td>
-			<td><button type="button" class="btn btn-danger">删除</button>  <button type="button" class="btn btn-warning">更新</button></td>
+			<td><input type="button" value="删除"></td>
 		</tr>
 		</c:forEach>
 
 	</table>
+	</div>
+	</div>
 	<span><%@include file="/WEB-INF/jsp/page/pagebar.jsp"%></span>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->

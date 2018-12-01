@@ -21,22 +21,6 @@
 <title>网站主页</title>
 </head>
 <body class="golbal-background-color">
-	<div class="container" style="background:url('/images/hero.png');">
-		<div id="top-a" class="row">
-			<div id="row">
-				<div class="col-md-6">
-					<a href="/app/" class="logo" target="_blank"> <img
-						src="/images/logo.png" alt="国响" width="126" height="16">
-					</a>
-				</div>
-				<div class="col-md-4 col-md-offset-2 header__nav">
-					<a class="btn btn-block btn-lg btn-primary" style="width: 4em;margin-top:5px;float:left;"
-						href="/app/login" target="_self">登&nbsp;录</a><a
-						class="btn btn-block btn-lg btn-primary" style="width: 4em;float:left;margin-left:1em;"
-						href="/app/register" data-toggle="modal" data-target="#signup">注&nbsp;册</a>
-				</div>
-			</div>
-		</div>
 			<div class="container" style="background:url('/images/hero.png');">
 		<div id="top-a" class="row">
 			<div id="row">

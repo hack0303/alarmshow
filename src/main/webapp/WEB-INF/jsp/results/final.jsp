@@ -25,8 +25,6 @@
 			<td>是否返回</td>
 			<td>是否是组</td>
 			<td>返回类型</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
     <c:forEach var="result" items="${results}">
     <tr>
@@ -39,8 +37,6 @@
 			<td>${result.isReturned}</td>
 			<td>${result.isGroup}</td>
 			<td>${result.returnType}</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
     </c:forEach>
 	</table>

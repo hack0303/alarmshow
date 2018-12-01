@@ -24,8 +24,6 @@
 			<td>衍生</td>
 			<td>电路号</td>
 			<td>规则条目号</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
 	<c:forEach var="ar" items="${results}">
 	<tr>
@@ -37,8 +35,6 @@
 			<td>${ar.dsc.almID}</td>
 			<td>${ar.elecBean.bussid}</td>
 			<td>${ar.ruleBean.ruleID}</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
 	</c:forEach>
 

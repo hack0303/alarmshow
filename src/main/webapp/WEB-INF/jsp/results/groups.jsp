@@ -22,8 +22,6 @@
 			<td>ID</td>
 			<td>组号(默认使用根ID)</td>
 			<td>成员</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
 		<c:forEach var="agroup" items="${results}">
 	<tr>
@@ -33,8 +31,6 @@
 			<td>${agroup.id}</td>
 			<td>${agroup.groupHeader.almID}</td>
 			<td>${agroup.memberids}</td>
-			<td>详情</td>
-			<td>操作</td>
 		</tr>
 	</c:forEach>
 

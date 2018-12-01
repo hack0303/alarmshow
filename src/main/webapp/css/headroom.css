@@ -1,0 +1,6 @@
+.headroom--unpinned{
+	position:fixed;
+}
+headroom--pinned{
+	position:block;
+}

@@ -25,8 +25,6 @@
 			<td>客户层电路/ID</td>
 			<td>正向路由路径</td>
 			<td>反向路由路径</td>
-			<td>详情</td>
-			<td>操作</td>
 </tr>
 		<c:forEach var="elec" items="${elecs}">
 <tr>
@@ -40,8 +38,6 @@
 			<td><c:out value="${elec.clients}"/></td>
 			<td><c:out value="${elec.forwardPath}"/></td>
 			<td><c:out value="${elec.reversePath}"/></td>
-			<td><a href="<c:out value='${elec.bussid}'/>">详情</a></td>
-			<td><button type="button" class="btn btn-danger">删除</button>  <button type="button" class="btn btn-warning">更新</button></td>	
 </tr>
 </c:forEach>
 </table>
