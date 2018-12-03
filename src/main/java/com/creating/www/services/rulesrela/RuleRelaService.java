@@ -2,8 +2,6 @@ package com.creating.www.services.rulesrela;
 
 import java.util.List;
 
-import com.creating.www.beans.alarms.AlarmBean;
-import com.creating.www.beans.routers.ElecBean;
 import com.creating.www.beans.rules.RuleBean;
 import com.creating.www.utils.QueryUtil;
 

@@ -1,8 +1,5 @@
 package com.creating.www.beans.results;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.creating.www.beans.alarms.AlarmBean;
 
 public class GroupBean {
