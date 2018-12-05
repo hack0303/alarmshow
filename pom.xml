@@ -23,6 +23,7 @@
 		<hibernate.version>5.0.6.Final</hibernate.version>
 		<build.finalName>demo</build.finalName>
 		<log4j2.version>2.3</log4j2.version>
+		<jackson.version>2.9.5</jackson.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -88,20 +89,42 @@
 			<version>2.0.0</version>
 		</dependency>
 		<dependency>
-		<groupId>com.creating.www.communication</groupId>
-		<artifactId>communication</artifactId>
-		<version>1.0.0</version>
+			<groupId>com.creating.www.communication</groupId>
+			<artifactId>communication</artifactId>
+			<version>1.0.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+
+
+
 	</dependencies>
 	<build>
-	<sourceDirectory>src/main/java</sourceDirectory>
-	<resources>
-	<resource>
-	<directory>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>
 	src/main/resources
 	</directory>
-	</resource>
-	</resources>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
