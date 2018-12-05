@@ -20,8 +20,14 @@ if(attr==null) response.sendRedirect("/app/login");
 <title>网站后台</title>
 </head>
 <body style="height:100%;">
-<div class="container-fluid" style="border:1px solid red;height:100%;overflow-y:scroll;overflow-x:hidden;">
-<div class="row border"><%@include file="/WEB-INF/jsp/areas/head.jsp" %></div>
+<div class="container-fluid" style="position:fixed;">
+<div class="row">
+<div class="col"></div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row border">
+<div class="col"><%@include file="/WEB-INF/jsp/areas/head.jsp" %></div></div>
 <div class="row border" style="height:100%;overflow:hidden;">
 <div id="left" class="col-lg-2 text-center border" style="height:100%;"><%@include file="/WEB-INF/jsp/areas/left.jsp" %></div>
 <div id="right" class="col-lg-10 border" id="nav_area" style="height:100%;overflow-y:scroll;"><%@include file="/WEB-INF/jsp/areas/right.jsp" %></div>
