@@ -11,8 +11,8 @@
 <body>
 <table class="table table-hover">
 <tr class="title">
-			<td>勾选</td>
-			<td>选项ID</td>
+			<td></td>
+			<td>#</td>
 			<td>参数名</td>
 			<td>参数值</td>
 			<td>描述</td>

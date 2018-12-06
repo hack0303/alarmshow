@@ -27,8 +27,8 @@ public class ProcessController {
 	public ProcessResultBean get(@RequestBody ProcessResultBean process) 
 	{
 		int count=process.getProcessedCount();
-		if(count<100)
-			process.setProcessedCount(++count);
+		if(count<100)process.setProcessedCount(100);
+			//process.setProcessedCount(++count);
 		return process;
 	}
 

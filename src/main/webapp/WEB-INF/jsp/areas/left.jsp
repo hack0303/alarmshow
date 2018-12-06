@@ -1,24 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<style>
-#nav .row{
-background:#16A085;
-color:white;
-}
-#nav .row .two{
-background:#1ABC9C;
-}
-</style>
+<!doctype html>
+
 <div id="nav" class="pointer">
 <div class="share mrl row">
             <ul>
-              <li>
+             <li>
                 <label class="share-label" for="share-toggle2">告警数据</label>
-                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on"><div class="bootstrap-switch-container" style=""><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" data-toggle="switch"></div></div>
+                <div id="alarms-data" class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"><div class="bootstrap-switch-container"><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" data-toggle="switch"></div></div>
               </li>
               <li>
                 <label class="share-label" for="share-toggle4">规则数据</label>
-                <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on"><div class="bootstrap-switch-container" style=""><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" checked="" data-toggle="switch"></div></div>
+                <div id="rules-data" class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"><div class="bootstrap-switch-container"><span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span><input type="checkbox" data-toggle="switch"></div></div>
               </li>
             </ul>
             <a id="run" class="btn btn-primary btn-block btn-large">运&nbsp;行</a>

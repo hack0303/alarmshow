@@ -21,5 +21,13 @@ public class QueryStatement {
 	 * select#alarmsrela#NULL*
 	 */
 	public static final String Q005 = "select#alarmsrela#NULL*";
+	/**
+	select#alarmsrela#LIMIT#NULL*
+	*/
+	public static final String Q006 = "select#alarm#LIMIT#NULL*";
+	/**
+	 * select#alarm#COUNT(ID)#NULL*
+	 * */
+	public static final String Q007="select#alarm#COUNT(ID)#NULL*";
 
 }

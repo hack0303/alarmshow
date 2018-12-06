@@ -51,6 +51,16 @@ left join alarm DSC on A.dsc=DSC.id
 left join elec ELEC on A.elecid=ELEC.id
 left join rule RULE on A.ruleid=RULE.id
 </sql>
+<sql id="sql#select#alarms#NULL*">
+select
+*
+from alarm
+</sql>
+<sql id="sql#alarm#COUNT(ID)#NULL*">
+select
+count(*)
+from alarm
+</sql>
 <select id="select#alarmsrela#id+" resultType="alarmPairBean" resultMap="alarmrela">
 <include refid="sql#select#alarmsrela#NULL*"/>
 where A.id = #{id}
@@ -61,5 +71,12 @@ where A.batchid = #{batchid}
 </select>
 <select id="select#alarmsrela#NULL*" resultType="alarmPairBean" resultMap="alarmrela">
 <include refid="sql#select#alarmsrela#NULL*"/>
+</select>
+<select id="select#alarm#LIMIT#NULL*" resultType="alarmBean" resultMap="alarm_result">
+<include refid="sql#select#alarms#NULL*"/>
+limit #{offset},#{length}
+</select>
+<select id="select#alarm#COUNT(ID)#NULL*" resultType="int">
+<include refid="sql#alarm#COUNT(ID)#NULL*"/>
 </select>
 </mapper>

@@ -11,8 +11,8 @@
 <body>
 <table class="table table-hover">
 <tr class="title">
-			<td>勾选</td>
-			<td>ID</td>
+			<td></td>
+			<td>#</td>
 			<td>根告警代码</td>
 			<td>衍生告警代码</td>
 			<td>根层次</td>
