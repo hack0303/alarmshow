@@ -3,38 +3,37 @@
  */
 package com.creating.www.beans.resources;
 
+import java.io.File;
+import java.io.Serializable;
+
 /**
  * @author Chack Yao
  * @firstcreatetime 2018年12月5日
  *
  */
-public class AlarmRelaResourceBean {
-private String ruleResource="";
-private String almsResource="";
+public class AlarmRelaResourceBean implements Serializable{
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+private String origin="";
+private File dest=null;
 /**
  * 
  */
 public AlarmRelaResourceBean() {
 	// TODO Auto-generated constructor stub
 }
-/**
- * 
- */
-public AlarmRelaResourceBean(String ruleResource,String almsResource) {
-	this.ruleResource=ruleResource;
-	this.almsResource=almsResource;
+public String getOrigin() {
+	return origin;
 }
-public String getRuleResource() {
-	return ruleResource;
+public void setOrigin(String origin) {
+	this.origin = origin;
 }
-public void setRuleResource(String ruleResource) {
-	this.ruleResource = ruleResource;
+public File getDest() {
+	return dest;
 }
-public String getAlmsResource() {
-	return almsResource;
+public void setDest(File dest) {
+	this.dest = dest;
 }
-public void setAlmsResource(String almsResource) {
-	this.almsResource = almsResource;
-}
-
 }

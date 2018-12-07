@@ -13,6 +13,8 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.creating.www.context.CustomerAppContext;
+
 public class ApplicationInitializationImpl implements WebApplicationInitializer {
     public static String basePath="";
 	@Override
@@ -20,8 +22,8 @@ public class ApplicationInitializationImpl implements WebApplicationInitializer 
 		basePath=servletContext.getRealPath("/");
 		// TODO Auto-generated method stub
 		XmlWebApplicationContext xmlAC = new XmlWebApplicationContext();
-		xmlAC.setConfigLocation("/WEB-INF/app-context.xml");
-		
+		xmlAC.setConfigLocations("classpath:root-context.xml","/WEB-INF/app-context.xml");
+		CustomerAppContext.xmlAC=xmlAC;//发布
 		CharacterEncodingFilter filter=new CharacterEncodingFilter("UTF-8",true);
 		FilterRegistration.Dynamic filter_register=servletContext.addFilter("encodingFilter", filter);
 		EnumSet<DispatcherType> dispatcherTypes=EnumSet.noneOf(DispatcherType.class);

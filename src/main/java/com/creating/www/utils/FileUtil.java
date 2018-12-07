@@ -27,13 +27,14 @@ public class FileUtil {
 	public static void generate(MultipartFile file,AlarmRelaResourceBean resourceBean) {
 		File dest = new File(
 				ApplicationInitializationImpl.basePath + "/upload" + File.separator + file.getOriginalFilename());
+		resourceBean.setOrigin(file.getOriginalFilename());
+		resourceBean.setDest(dest);
 		dest.getParentFile().mkdirs();
 		if (dest.exists())
 			dest.delete();
 		try {
 			dest.createNewFile();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {

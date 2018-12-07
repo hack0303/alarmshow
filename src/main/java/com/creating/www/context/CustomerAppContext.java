@@ -6,6 +6,7 @@ import java.io.InputStream;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 public class CustomerAppContext {
 public static SqlSessionFactory _SQL_SESSION_FACTORY=null;
@@ -23,4 +24,5 @@ try {
 SqlSessionFactory ssf=builder.build(is);
 _SQL_SESSION_FACTORY=ssf;
 }
+public static XmlWebApplicationContext xmlAC=null;
 }

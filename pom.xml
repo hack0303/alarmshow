@@ -24,6 +24,7 @@
 		<build.finalName>demo</build.finalName>
 		<log4j2.version>2.3</log4j2.version>
 		<jackson.version>2.9.5</jackson.version>
+		<demo.alms.parser.version>1.0.0</demo.alms.parser.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -111,10 +112,11 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-
-
-
-
+		<dependency>
+			<groupId>com.creating.www.demo.alms</groupId>
+			<artifactId>alms-parser</artifactId>
+			<version>${demo.alms.parser.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>

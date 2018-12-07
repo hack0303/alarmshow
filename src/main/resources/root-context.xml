@@ -7,5 +7,6 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
+<bean id="AlmBeanFromFileParser" class="com.creating.www.export.alms.parsers.AlmBeanFromFileParser"/>
+<bean id="AlmServiceImpl" class="com.creating.www.services.alarmsrela.AlmServiceImpl"/>
 </beans>
